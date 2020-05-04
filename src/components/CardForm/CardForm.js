@@ -29,7 +29,7 @@ class CardForm extends Component{
                     elementType:'input',
                     elementConfig:{
                         type:'tel',
-                        maxLength:'19',
+                        maxLength:'16',
                         required:true
                     },
                     label:'Card Number',
@@ -80,28 +80,12 @@ class CardForm extends Component{
         }
     }
     inputChangeHandle=(e,id) =>{
-        let count=0;
+        
         e.preventDefault();
         const updatedForm={ ...this.state.cardForm}
         let updatedElement={...updatedForm[id]}
         let val=e.target.value
-        if(id==='cardnumber')
-        {
-            if(/^[0-9]*$/.test(val))
-            {
-                count=val.length
-                if(count===4|| count===9 || count===14)
-                    {
-                        updatedElement.value=val
-                    }
-                    else{
-                        updatedElement.value=val
-                    }
-                updatedForm[id]=updatedElement
-                this.setState({cardForm:updatedForm})
-            }
-        }
-        else if(id==='cardcvv')
+        if(id==='cardnumber' || id==='cardcvv')
         {
             if(/^[0-9]*$/.test(val))
             {
@@ -110,15 +94,12 @@ class CardForm extends Component{
                 this.setState({cardForm:updatedForm})
             }
         }
+        
         else{
             updatedElement.value=val
             updatedForm[id]=updatedElement
             this.setState({cardForm:updatedForm})
         }
-    }
-
-    inputKeyHandle=(e,id) =>{
-        
     }
 
     inputFocusHandle=(e,id) =>{
