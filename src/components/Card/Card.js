@@ -7,11 +7,11 @@ const Card=(props)=>{
     let temp=[]
     let cvvnum=cvv.split('');
         temp=cardnum.split('');
-            for(let i=0;i<20;i++)
+            for(let i=0;i<16;i++)
             {
                     if(i<=temp.length && temp.length)
                     {
-                        if(i>4 && i<15 && temp[i] !==' ')
+                        if(i>4 && i<11)
                         {
                             cardArray.push('*') 
                         }
@@ -20,9 +20,6 @@ const Card=(props)=>{
                         }
                     }
                     else{
-                        if(i===5|| i===10 || i===15)
-                            cardArray.push(' ');
-                        else
                             cardArray.push('#');
                     }
             }
