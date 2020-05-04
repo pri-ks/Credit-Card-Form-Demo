@@ -10,7 +10,6 @@ const inputbox=(props) =>{
                 {...props.elementConfig}
                 value={props.value.toUpperCase()}
                 onChange={props.changed}
-                onKeyUp={props.keypress}
                 onFocus={ props.focus } 
                 />;
             break;
@@ -38,7 +37,6 @@ const inputbox=(props) =>{
             {...props.elementConfig}
             value={props.value}
             onChange={props.changed}
-            onKeyUp={props.keypress}
             onFocus={ props.focus } 
             />;
         break;
