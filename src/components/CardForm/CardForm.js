@@ -29,6 +29,7 @@ class CardForm extends Component{
                     elementType:'input',
                     elementConfig:{
                         type:'tel',
+                        minLength:'14',
                         maxLength:'16',
                         required:true
                     },
